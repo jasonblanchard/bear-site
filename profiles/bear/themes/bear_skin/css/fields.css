@@ -184,6 +184,9 @@
 .field-name-field-main-image img {
   display: block;
   margin: 0 auto;
+  -webkit-transform: rotate(-1.5deg);
+  -moz-transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg);
 }
 
 .field-name-field-location {
