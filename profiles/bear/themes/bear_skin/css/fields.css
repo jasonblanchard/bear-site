@@ -201,6 +201,7 @@
   text-align: center;
   font-size: 2em;
   margin: 20px;
+  line-height: 1em;
 }
 
 @media (max-width: 940px) {
