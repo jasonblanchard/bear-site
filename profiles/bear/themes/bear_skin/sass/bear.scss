@@ -227,6 +227,23 @@ ul.social-footer {
    }
  }
 }
+
+/* Images */
+
+img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 7px solid white;
+}
+
+.no-border img, .field-name-field-ma-image img {
+  border: none;
+  border-radius: none;
+}
+
+/**/
+
 @include breakpoint ($breakpoint-medium-width) {
  #footer {
   text-align: center;

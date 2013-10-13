@@ -104,3 +104,49 @@
 
 .field-name-field-FIELDNAME { /* Underscores in field name are replaced with dashes. */
 }
+
+.field-name-field-main-image img {
+  display: block;
+  margin: 0 auto;
+}
+
+.field-name-field-location {
+  text-align: right;
+  font-family: 'neoretrofillregular';
+  font-size: 2.7em;
+  line-height: 1em;
+
+  p {
+    margin-top: 29px;
+  }
+}
+
+.homepage .pane-node-title {
+  font-family: 'neoretrofillregular';
+  text-align: center;
+  font-size: 2em;
+  margin: 20px;
+}
+
+@media (max-width: 940px) {
+  .homepage .panel-col-first {
+    width: 100%;
+
+    .field-name-field-location {
+      text-align: center;
+
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .field-name-field-ma-image img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .homepage .panel-col-last {
+    width: 100%;
+  }
+}
