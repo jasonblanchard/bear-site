@@ -58,6 +58,7 @@ function advagg_missing_generate() {
     }
     else {
       list($files_to_save, $type) = $return;
+      $created = TRUE;
     }
   }
   else {
@@ -66,12 +67,16 @@ function advagg_missing_generate() {
     // be available in menu_execute_active_handler() resulting in a 404.
     lock_wait($lock_name, 10);
     if (file_exists($uri) && filesize($uri) > 0) {
-      $created = TRUE;
+      $data = advagg_get_hashes_from_filename($filename);
+      if (is_array($data)) {
+        $type = $data[0];
+        $created = TRUE;
+      }
     }
   }
 
   // Redirect and try again on failure.
-  if (empty($files_to_save) && empty($created)) {
+  if (empty($created)) {
     $redirect_counter++;
     $uri .= '?redirect_counter=' . $redirect_counter;
     header('Location: ' . $uri, TRUE, 307);
@@ -82,9 +87,9 @@ function advagg_missing_generate() {
     watchdog('advagg', 'One of the alter hooks failed when generating this file: %uri. Thus this file was created without any alter hooks.', array('%uri' => $uri), WATCHDOG_CRITICAL);
   }
 
-  // Output file's contents if createing the file was sucessfull.
+  // Output file's contents if creating the file was successful.
   // This function will call exit.
-  advagg_missing_send_saved_file($files_to_save, $uri, $created, $type);
+  advagg_missing_send_saved_file($files_to_save, $uri, $created, $type, $redirect_counter);
 }
 
 /**
@@ -99,7 +104,7 @@ function advagg_missing_generate() {
  * @param $type
  *   css or js
  */
-function advagg_missing_send_saved_file($files_to_save, $uri, $created, $type) {
+function advagg_missing_send_saved_file($files_to_save, $uri, $created, $type, $redirect_counter) {
   // Negotiate whether to use gzip compression.
   $return_compressed = isset($_SERVER['HTTP_ACCEPT_ENCODING']) && strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== FALSE;
   header('Vary: Accept-Encoding', FALSE);
@@ -108,7 +113,9 @@ function advagg_missing_send_saved_file($files_to_save, $uri, $created, $type) {
     if ($return_compressed && file_exists($uri . '.gz') && filesize($uri . '.gz') > 0) {
       $uri .= '.gz';
     }
-    $files_to_save[$uri] = file_get_contents($uri);
+    if (!isset($files_to_save[$uri]) && file_exists($uri) && filesize($uri)) {
+      $files_to_save[$uri] = file_get_contents($uri);
+    }
   }
 
   // Make sure zlib.output_compression does not compress the output.
@@ -118,7 +125,7 @@ function advagg_missing_send_saved_file($files_to_save, $uri, $created, $type) {
   if (ob_get_level()) {
     ob_end_clean();
   }
-  // Set far future headers.
+  // Set generic far future headers.
   advagg_missing_set_farfuture_headers();
   // Return compressed content if we can.
   if ($return_compressed) {
@@ -136,18 +143,37 @@ function advagg_missing_send_saved_file($files_to_save, $uri, $created, $type) {
     }
   }
   else {
-    $data = reset($files_to_save);
-  }
-  if ($type == 'css') {
-    header("Content-Type: text/css");
-  }
-  elseif ($type == 'js') {
-    header("Content-Type: text/javascript; charset=UTF-8");
+    $data = trim(reset($files_to_save));
   }
 
   // Output file and exit.
-  print $data;
-  exit();
+  if (!empty($data)) {
+    // Send out a 200 OK status.
+    header($_SERVER['SERVER_PROTOCOL'] . " 200 OK");
+
+    // Insure the Last-Modified header is set so 304's work correctly.
+    if (file_exists($uri) && $filemtime = @filemtime($uri)) {
+      header('Last-Modified: ' . gmdate('D, d M Y H:i:s \G\M\T', $filemtime));
+    }
+
+    if ($type == 'css') {
+      header("Content-Type: text/css");
+    }
+    elseif ($type == 'js') {
+      header("Content-Type: text/javascript; charset=UTF-8");
+    }
+    header('X-AdvAgg: Generated file at ' . REQUEST_TIME);
+
+    print $data;
+    exit();
+  }
+  else {
+    // Redirect and try again on failure.
+    $redirect_counter++;
+    $uri .= '?redirect_counter=' . $redirect_counter;
+    header('Location: ' . $uri, TRUE, 307);
+    exit();
+  }
 }
 
 /**
@@ -185,13 +211,6 @@ function advagg_missing_set_farfuture_headers() {
   // Set a far future Expires header. The maximum UNIX timestamp is somewhere
   // in 2038. Set it to a date in 2037, just to be safe.
   header("Expires: Tue, 20 Jan 2037 04:08:15 GMT");
-  // Pretend the file was last modified a long time ago in the past, this will
-  // prevent browsers that don't support Cache-Control nor Expires headers to
-  // still request a new version too soon (these browsers calculate a
-  // heuristic to determine when to request a new version, based on the last
-  // time the resource has been modified).
-  // Also see http://code.google.com/speed/page-speed/docs/caching.html.
-  header("Last-Modified: Fri, 14 Oct 1983 00:16:23 GMT");
 }
 
 /**
@@ -200,7 +219,7 @@ function advagg_missing_set_farfuture_headers() {
  * @param $filename
  *   Just the filename no path information.
  * @param $no_alters
- *   Set to TRUE to do the bare ammount of processing on the file.
+ *   Set to TRUE to do the bare amount of processing on the file.
  *
  * @return
  *   On failure a string saying why it failed.
@@ -248,6 +267,11 @@ function advagg_missing_create_file($filename, $no_alters = FALSE) {
  *   force recreate the .htaccess file.
  */
 function advagg_htaccess_check_generate($files_to_save, $type, $force = FALSE) {
+  $content_type = $type;
+  if ($content_type == 'js') {
+    $content_type = 'javascript';
+  }
+
   $data  = "\n";
   $data .= "<FilesMatch \"^${type}" . ADVAGG_SPACE . "[A-Za-z0-9-_]{43}" . ADVAGG_SPACE . "[A-Za-z0-9-_]{43}" . ADVAGG_SPACE . "[A-Za-z0-9-_]{43}.${type}(\.gz)?\">\n";
   $data .= "  # No mod_headers\n";
@@ -270,12 +294,12 @@ function advagg_htaccess_check_generate($files_to_save, $type, $force = FALSE) {
   $data .= "  </IfModule>\n";
   $data .= "\n";
   $data .= "  <IfModule mod_headers.c>\n";
+  $data .= "    # Serve correct content type.\n";
+  $data .= "    Header set Content-Type text/${content_type}\n";
   $data .= "    # Set a far future Cache-Control header to 480 weeks.\n";
   $data .= "    Header set Cache-Control \"max-age=290304000, no-transform, public\"\n";
   $data .= "    # Set a far future Expires header.\n";
   $data .= "    Header set Expires \"Tue, 20 Jan 2037 04:20:42 GMT\"\n";
-  $data .= "    # Pretend the file was last modified a long time ago in the past.\n";
-  $data .= "    Header set Last-Modified \"Fri, 14 Jan 1983 04:20:42 GMT\"\n";
   $data .= "    # Do not use etags for cache validation.\n";
   $data .= "    Header unset ETag\n";
   $data .= "  </IfModule>\n";
@@ -288,7 +312,7 @@ function advagg_htaccess_check_generate($files_to_save, $type, $force = FALSE) {
       continue;
     }
 
-    advagg_save_data($htaccess_file, $data);
+    advagg_save_data($htaccess_file, $data, $force);
   }
 }
 
@@ -696,7 +720,7 @@ function advagg_missing_fast404($msg = '') {
 }
 
 /**
- * Read the atime value for the given aggregrate.
+ * Read the atime value for the given aggregate.
  *
  * @param $aggregate_filenames_hash
  *   Hash of the groupings of files.
@@ -796,7 +820,7 @@ function advagg_parse_media_blocks($css) {
     $last_start = $start + 1;
   }
 
-  // Add in any remaing css rules after the last @media statement.
+  // Add in any remaining css rules after the last @media statement.
   if (strlen($css) > $last_start) {
     $insert = trim(substr($css, $last_start));
     if (!empty($insert)) {

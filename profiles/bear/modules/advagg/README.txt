@@ -9,15 +9,17 @@ CONTENTS OF THIS FILE
 
  * Features & benefits
  * Configuration
+ * JSMin PHP Extension
  * JavaScript Bookmarklet
  * Technical Details & Hooks
  * nginx Configuration
+ * Troubleshooting
 
 
 FEATURES & BENEFITS
 -------------------
 
-Advanced CSS/JS Aggregation Core Module:
+Advanced CSS/JS Aggregation core features:
  * On demand generation of CSS/JS Aggregates. If the file doesn't exist it will
    be generated on demand.
  * Stampede protection for CSS and JS aggregation. Uses locking so multiple
@@ -29,26 +31,42 @@ Advanced CSS/JS Aggregation Core Module:
  * Smarter cache flushing. Scans all CSS/JS files that have been added to any
    aggregate; if that file has changed then flush the correct caches so the
    changes go out. The new name ensures changes go out when using CDNs.
- * Footer JS gets aggregated as well.
  * One can add JS to any region of the theme & have it aggregated.
  * Url query string to turn off aggregation for that request. ?advagg=0 will
    turn off file aggregation if the user has the "bypass advanced aggregation"
    permission. ?advagg=-1 will completely bypass all of Advanced CSS/JS
-   Aggregations modules and submodules.
+   Aggregations modules and submodules. ?advagg=1 will enable Advanced CSS/JS
+   Aggregation if it is currently disabled.
  * Button on the admin page for dropping a cookie that will turn off file
    aggregation. Useful for theme development.
  * Gzip support. All aggregated files can be pre-compressed into a .gz file and
    served from Apache. This is faster then gzipping the file on each request.
 
-Advanced CSS/JS Aggregation Submodules:
- * CSS/JS CDN. Uses the Google Libraries API to serve jQuery & jQuery UI from
-   the google CDN.
- * CSS/JS Compress. Can compress/minifiy files and inline CSS/JS.
- * Bundler. Given a target number of CSS/JS aggregates, this will try very hard
-   to meet that goal. It smartly groups files together.
- * Modifier. Has various tweaks packaged up. Force preprocessing for all CSS/JS;
-   move JS to footer; add defer tag to all JS; Inline all CSS/JS for given
-   paths; and the use of a shared directory for a unified multisite.
+Included submodules:
+ * advagg_bundler:
+   Smartly groups files together - given a target number of CSS/JS aggregates,
+   this will try very hard to meet that goal.
+ * advagg_css_cdn:
+   Load CSS libraries from a public CDN; currently only supports Google's CDN.
+ * advagg_css_compress:
+   Compress the compiled CSS files using a 3rd party compressor; currently
+   supports YUI (included).
+ * advagg_js_cdn:
+   Load JavaScript libraries from a public CDN; currently only supports Google's
+   CDN.
+ * advagg_js_compress:
+   Compress the compiled JavaScript files using a 3rd party compressor;
+   currently supports JSMin+ (included).
+ * advagg_mod:
+   Includes additional tweaks that may not work for all sites:
+   * Force preprocessing for all CSS/JS.
+   * Move JS to footer.
+   * Add defer tag to all JS.
+   * Inline all CSS/JS for given paths.
+   * Use a shared directory for a unified multisite.
+ * advagg_validator:
+   Validate all CSS files using jigsaw.w3.org. Check all CSS files with CSSLint.
+   Check all JS files with JSHint.
 
 
 CONFIGURATION
@@ -106,6 +124,66 @@ admin/config/development/performance/advagg/info
    are in use.
  * Hooks and variables used in hash. Show what is used to calculate the 3rd hash
    of an aggregates filename.
+
+Hidden Settings:
+The following settings are not configurable from the admin UI and must be set in
+settings.php. In general they are settings that should not be changed.
+
+    // Display a message that the bypass cookie is set.
+    $conf['advagg_show_bypass_cookie_message'] = TRUE;
+
+    // Skip the 404 check on status page.
+    $conf['advagg_skip_404_check'] = FALSE;
+
+    // Force the scripts #aggregate_callback to always be _advagg_aggregate_js.
+    $conf['advagg_enforce_scripts_callback'] = TRUE;
+
+    // Default location of AdvAgg configuration items.
+    $conf['advagg_admin_config_root_path'] = 'admin/config/development/performance';
+
+    // Run advagg_url_inbound_alter().
+    $conf['advagg_url_inbound_alter'] = TRUE;
+
+    // Allow JavaScript insertion into any scope even if theme does not support
+    // it.
+    $conf['advagg_scripts_scope_anywhere'] = FALSE;
+
+    // Set the jQuery UI version.
+    $conf['advagg_css_cdn_jquery_ui_version'] = '1.8.7';
+
+    // See if jQuery UI should be grabbed from the Google CDN.
+    $conf['advagg_css_cdn_jquery_ui'] = TRUE;
+
+    // Set the jQuery UI version.
+    $conf['advagg_js_cdn_jquery_ui_version'] = '1.8.7';
+
+    // Set the jQuery version.
+    $conf['advagg_js_cdn_jquery_version'] = '1.4.4';
+
+    // Use minification.
+    $conf['advagg_js_cdn_compression'] = TRUE;
+
+    // See if jQuery UI should be grabbed from the Google CDN.
+    $conf['advagg_js_cdn_jquery_ui'] = TRUE;
+
+    // See if jQuery should be grabbed from the Google CDN.
+    $conf['advagg_js_cdn_jquery'] = TRUE;
+
+    // Value for the compression ratio test.
+    $conf['advagg_js_max_compress_ratio'] = 0.9;
+
+    // Value for the compression ratio test.
+    $conf['advagg_js_compress_ratio'] = 0.1;
+
+
+JSMIN PHP EXTENSION
+-------------------
+
+The AdvAgg JS Compress module can take advantage of jsmin.c. JavaScript parsing
+and minimizing will be done in C instead of PHP dramatically speeding up the
+process. If using PHP 5.3.10 or higher https://github.com/sqmk/pecl-jsmin is
+recommended. If using PHP 5.3.9 or lower
+http://www.ypass.net/software/php_jsmin/ is recommended.
 
 
 JAVASCRIPT BOOKMARKLET
@@ -177,6 +255,7 @@ NGINX CONFIGURATION
 -------------------
 
 http://drupal.org/node/1116618
+Note that @drupal might be @rewrite depending on your servers configuration.
 
     ###
     ### advagg_css and advagg_js support
@@ -186,6 +265,50 @@ http://drupal.org/node/1116618
       expires    max;
       add_header ETag "";
       add_header Cache-Control "max-age=290304000, no-transform, public";
-      add_header Last-Modified "Wed, 20 Jan 1988 04:20:42 GMT";
       try_files  $uri @drupal;
     }
+
+
+TROUBLESHOOTING
+---------------
+
+If the core Fast 404 Pages functionality is enabled via settings.php, the
+settings must be changed in order for the on-demand file compilation to work.
+Change this:
+    $conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
+to this:
+    $conf['404_fast_paths_exclude'] = '/\/(?:styles|advagg_(cs|j)s)\//';
+
+Similarly, if the Fast_404 module is enabled, the 'fast_404_string_whitelisting'
+variable must be set inside of settings.php. Add this to your settings.php file:
+    $conf['fast_404_string_whitelisting'][] = '/advagg_';
+
+
+If Far-Future headers are not being sent out and you are using Apache here are
+some tips to hopefully get it working. For Apache enable mod_rewrite,
+mod_headers, and mod_expires. Add the following code to the bottom of Drupal's
+core .htaccess file (located at the webroot level).
+
+    <FilesMatch "^(css|js)__[A-Za-z0-9-_]{43}__[A-Za-z0-9-_]{43}__[A-Za-z0-9-_]{43}.(css|js)(\.gz)?">
+      # No mod_headers
+      <IfModule !mod_headers.c>
+        # Use Expires Directive.
+        <IfModule mod_expires.c>
+          # Do not use ETags.
+          FileETag None
+          # Enable expirations.
+          ExpiresActive On
+          # Cache all aggregated css/js files for 480 weeks after access (A).
+          ExpiresDefault A290304000
+        </IfModule>
+      </IfModule>
+
+      <IfModule mod_headers.c>
+        # Set a far future Cache-Control header to 480 weeks.
+        Header set Cache-Control "max-age=290304000, no-transform, public"
+        # Set a far future Expires header.
+        Header set Expires "Tue, 20 Jan 2037 04:20:42 GMT"
+        # Do not use etags for cache validation.
+        Header unset ETag
+      </IfModule>
+    </FilesMatch>

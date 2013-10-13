@@ -2,7 +2,7 @@
 
 /*!
  * cssmin.php rev ebaf67b 12/06/2013
- * Author: Tubal Martin - http://blog.margenn.com/
+ * Author: Tubal Martin - http://tubalmartin.me/
  * Repo: https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port
  *
  * This is a PHP port of the CSS minification tool distributed with YUICompressor,
@@ -287,7 +287,8 @@ class CSSmin
 
         // preg_replace_callback error on windows only.
         // https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/issues/4
-        if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
+        $php_os = strtoupper(substr(PHP_OS, 0, 3));
+        if ($php_os !== 'WIN' && $php_os !== 'DAR') {
           // Remove the spaces before the things that should not have spaces before them.
           // But, be careful not to turn "p :link {...}" into "p:link{...}"
           // Swap out any pseudo-class colons with the token, and then swap back.
@@ -339,6 +340,9 @@ class CSSmin
 
         // Replace 0 length units 0(px,em,%) with 0.
         $css = preg_replace('/(^|[^0-9])(?:0?\.)?0(?:em|ex|ch|rem|vw|vh|vm|vmin|cm|mm|in|px|pt|pc|%|deg|g?rad|m?s|k?hz)/iS', '${1}0', $css);
+
+        // 0% step in a keyframe? restore the % unit
+        $css = preg_replace('/(keyframe.*?){0{/iS', '$1{0%{', $css);
 
         // Replace 0 0; or 0 0 0; or 0 0 0 0; with 0.
         $css = preg_replace('/\:0(?: 0){1,3}(;|\}| \!)/', ':0$1', $css);
