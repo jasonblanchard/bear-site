@@ -456,8 +456,10 @@ ul.primary li a.active {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003116}}
 .wrapper.header {
   background-color: #b13131;
+  background-image: url(../images/stars.png);
+  background-repeat: no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003121}}
 .wrapper.footer {
   background-color: #eff2f1;
 }
@@ -465,7 +467,7 @@ ul.primary li a.active {
 /***********
 ~HEADER
 ***********/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003132}}
 .wrapper.header #header {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -481,39 +483,39 @@ ul.primary li a.active {
   -webkit-margin-start: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003140}}
 h1#site-name {
   font-family: 'neoretrofillregular';
   font-size: 3.5em;
   line-height: 1em;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003145}}
 h1#site-name a:link, h1#site-name a:visited {
   color: #ffffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003148}}
 h1#site-name a:hover {
   text-decoration: none;
 }
 
 @media (max-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003153}}
   .wrapper.header #header {
     text-align: center;
     padding: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003156}}
   .wrapper.header #header #logo {
     float: none;
     clear: both;
     display: block;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003161}}
   .wrapper.header #header #name-and-slogan {
     float: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003163}}
   .wrapper.header #header #name-and-slogan h1 {
     margin: 10px 0;
   }
@@ -521,15 +523,15 @@ h1#site-name a:hover {
 /***********
 ~SIDEBARS
 ***********/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003174}}
 aside.sidebars {
   margin: 30px 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003176}}
 aside.sidebars .sidebar {
   padding-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003178}}
 aside.sidebars .sidebar h2 {
   background: #eff2f1;
   text-indent: 10px;
@@ -537,7 +539,7 @@ aside.sidebars .sidebar h2 {
   font-size: 110%;
 }
 @media (min-width: 1000px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003176}}
   aside.sidebars .sidebar {
     padding-left: auto;
   }
@@ -546,7 +548,7 @@ aside.sidebars .sidebar h2 {
 /***********
 ~FOOTER
 ***********/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003195}}
 .wrapper.footer #footer {
   margin-left: auto;
   margin-right: auto;
@@ -554,24 +556,24 @@ aside.sidebars .sidebar h2 {
   font-size: 12px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003203}}
 ul.social-footer {
   padding: 0;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003205}}
 ul.social-footer li {
   list-style-type: none;
   float: left;
   margin: 0 5px 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003209}}
 ul.social-footer li a {
   display: block;
   outline: none;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003213}}
 ul.social-footer li a i {
   -o-transition: .5s;
   -ms-transition: .5s;
@@ -580,28 +582,34 @@ ul.social-footer li a i {
   color: #555555;
   font-size: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003220}}
 ul.social-footer li a i span {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003223}}
 ul.social-footer li a i:hover {
   color: #61aee2;
 }
 
 @media (max-width: 800px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003231}}
   #footer {
     text-align: center;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003234}}
   ul.social-footer {
     margin-top: -10px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003236}}
   ul.social-footer li {
     display: inline-block;
     float: none;
+  }
+}
+@media (max-width: 1072px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003244}}
+  .wrapper.header {
+    background-image: none;
   }
 }

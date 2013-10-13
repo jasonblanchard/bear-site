@@ -115,6 +115,8 @@ ul.primary {
 .wrapper {
  &.header {
   background-color: $red;
+  background-image: url(../images/stars.png);
+  background-repeat: no-repeat;
  }
  &.footer {
   background-color: $grey;
@@ -236,4 +238,10 @@ ul.social-footer {
    float: none;
   }
  }
+}
+
+@media (max-width: 1072px) {
+  .wrapper.header {
+    background-image: none;
+  }
 }
