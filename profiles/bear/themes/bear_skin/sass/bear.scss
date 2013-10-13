@@ -1,0 +1,239 @@
+/**
+ * @file
+ *
+ * Bear Starter Theme Main Styling
+ *
+ * Adds basic bear styles for starter theme.
+ *
+ */
+
+/***********
+~IMPORTS
+***********/
+@import "base";
+@import "variables";
+@import url(http://fonts.googleapis.com/css?family=Average+Sans);
+@import url(http://fonts.googleapis.com/css?family=Forum);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+@import "compass/css3/border-radius";
+
+
+/***********
+~GENERIC
+***********/
+body {
+ color: $dark;
+ background-color: rgba(252,250,242,0.58);
+ @include m-links;
+}
+html, button, input, select, textarea {
+ @include bearfont-main;
+}
+h1, h2, h3, h4, h5 {
+ @include bearfont-titles;
+ font-weight: 400;
+}
+#page {
+ min-width: 300px;
+}
+#navigation {
+ @include bearfont-main;
+}
+#content {
+ @include bearfont-main;
+}
+
+#navigation ul.menu {
+  margin-top: 10px;
+  text-align: center;
+
+ li {
+ text-transform: none;
+ @include clear-space;
+ @include m-links;
+  a {
+   padding: 7px 15px 6px 15px;
+   @include bottom-border-radius;
+   &.active, &:visited {
+    text-decoration: none;
+   }
+  }
+ }
+ ul {
+  z-index: 100;
+  &:hover {
+   display: block;
+  }
+  li {
+   a:link, a:visited, a:hover {
+    background: transparent;
+    color: $blue;
+   }
+   a:hover {
+   }
+  }
+ }
+}
+.form-submit {
+ @include sassy-button("matte", 5px, 16px, #61AEE2, #61AEE2, #fff, "inset");
+}
+ul.primary {
+ padding: 0;
+  border-bottom: 1px solid #D9DBDB;
+ @include breakpoint ($breakpoint-small-width) {
+  border-bottom: none;
+ }
+ li {
+  border: none;
+  margin:0 5px 0 0;
+  text-shadow: 0;
+  a:link, a:visited, a:hover {
+   text-shadow: 0;
+   @include sassy-button("matte", 0, 16px, #EFF2F1, #e6e7e7, #555, "inset");
+  }
+  a {color: #333 !important;
+   &.active {
+    color: $blue !important;
+    }
+   }
+ }
+}
+@include breakpoint ($breakpoint-small-width) {
+ ul.primary li, ul.secondary li {
+   float: none;
+   clear: both;
+   margin: 0;
+   a {
+   width: 88%;
+  }
+  }
+ }
+/***********
+~STRUCTURE
+***********/
+
+.wrapper {
+ &.header {
+  background-color: $red;
+ }
+ &.footer {
+  background-color: $grey;
+ }
+}
+
+/***********
+~HEADER
+***********/
+
+.wrapper.header {
+ //border-bottom: 2px solid $blue;
+ #header {
+   padding-top: 10px;
+   padding-bottom: 10px;
+ }
+}
+#header {
+ @include clear-space;
+}
+h1#site-name {
+ font-family: 'neoretrofillregular';
+ font-size: 3.5em;
+ line-height: 1em;
+ text-align: center;
+  a:link, a:visited {
+      color: #ffffff;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+@include breakpoint ($breakpoint-medium-width) {
+ .wrapper.header #header {
+  text-align: center;
+  padding:0;
+  #logo {
+   float: none;
+   clear: both;
+   display: block;
+  }
+  #name-and-slogan {
+   float: none;
+   h1 {
+    margin: 10px 0;
+   }
+  }
+ }
+}
+
+/***********
+~SIDEBARS
+***********/
+
+aside.sidebars {
+ margin: 30px 0 0 0;
+ .sidebar {
+  padding-bottom: 20px;
+  h2 {
+   background: $grey;
+   text-indent: 10px;
+   margin: 0 0 10px 0;
+   font-size: 110%;
+  }
+  @include breakpoint ($breakpoint-large-width) {
+   padding-left: auto;
+  }
+ }
+}
+
+/***********
+~FOOTER
+***********/
+
+.wrapper.footer {
+ #footer {
+  margin-left: auto;
+  margin-right: auto;
+  color: $dark;
+  font-size:12px;
+  //display: inline;
+ }
+}
+ul.social-footer {
+ @include reset-ul;
+  li {
+   list-style-type: none;
+   float: left;
+   margin: 0 5px 0 0;
+    a {
+     display: block;
+     outline: none;
+     text-decoration: none;
+     i {
+      -o-transition:.5s;
+       -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      color: $dark;
+      font-size: 30px;
+      span {
+      display: none;
+      }
+      &:hover {
+       color: $blue;
+      }
+     }
+   }
+ }
+}
+@include breakpoint ($breakpoint-medium-width) {
+ #footer {
+  text-align: center;
+ }
+ ul.social-footer {
+  margin-top: -10px;
+  li {
+   display: inline-block;
+   float: none;
+  }
+ }
+}

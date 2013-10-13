@@ -1,0 +1,607 @@
+@import url(http://fonts.googleapis.com/css?family=Average+Sans);
+@import url(http://fonts.googleapis.com/css?family=Forum);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+/**
+ * @file
+ *
+ * Bear Starter Theme Main Styling
+ *
+ * Adds basic bear styles for starter theme.
+ *
+ */
+/***********
+~IMPORTS
+***********/
+/* includes our social icons styles and font */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000363}}
+[class*="foundicon-"]:after {
+  position: relative;
+  top: -10px;
+  left: 10px;
+  color: #DDD;
+  font-size: 100%;
+  margin: -20px 0 0 0;
+  font-style: normal;
+  display: block;
+  text-indent: -9999px;
+  vertical-align: baseline;
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000377}}
+.foundicon-thumb-up:after {
+  content: "thumb-up";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000378}}
+.foundicon-thumb-down:after {
+  content: "thumb-down";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000379}}
+.foundicon-rss:after {
+  content: "rss";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000380}}
+.foundicon-facebook:after {
+  content: "facebook";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000381}}
+.foundicon-twitter:after {
+  content: "twitter";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000382}}
+.foundicon-pinterest:after {
+  content: "pinterest";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000383}}
+.foundicon-github:after {
+  content: "github";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000384}}
+.foundicon-path:after {
+  content: "path";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000385}}
+.foundicon-linkedin:after {
+  content: "linkedin";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000386}}
+.foundicon-dribbble:after {
+  content: "dribbble";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000387}}
+.foundicon-stumble-upon:after {
+  content: "stumble-upon";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000388}}
+.foundicon-behance:after {
+  content: "behance";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000389}}
+.foundicon-reddit:after {
+  content: "reddit";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000390}}
+.foundicon-google-plus:after {
+  content: "google-plus";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000391}}
+.foundicon-youtube:after {
+  content: "youtube";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000392}}
+.foundicon-vimeo:after {
+  content: "vimeo";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000393}}
+.foundicon-flickr:after {
+  content: "flickr";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000394}}
+.foundicon-slideshare:after {
+  content: "slideshare";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000395}}
+.foundicon-picassa:after {
+  content: "picassa";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000396}}
+.foundicon-skype:after {
+  content: "skype";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000397}}
+.foundicon-steam:after {
+  content: "steam";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000398}}
+.foundicon-instagram:after {
+  content: "instagram";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\0000399}}
+.foundicon-foursquare:after {
+  content: "foursquare";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003100}}
+.foundicon-delicious:after {
+  content: "delicious";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003101}}
+.foundicon-chat:after {
+  content: "chat";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003102}}
+.foundicon-torso:after {
+  content: "torso";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003103}}
+.foundicon-tumblr:after {
+  content: "tumblr";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003104}}
+.foundicon-video-chat:after {
+  content: "video-chat";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003105}}
+.foundicon-digg:after {
+  content: "digg";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_custom\.scss}line{font-family:\00003106}}
+.foundicon-wordpress:after {
+  content: "wordpress";
+}
+
+/***********
+~VARIABLES & MIXINS
+***********/
+/* Usage
+.class {
+    @include linear-gradient(#color, $color);
+} */
+/***********
+~GENERIC
+***********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000324}}
+body {
+  color: #555555;
+  background-color: rgba(252, 250, 242, 0.58);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_variables\.scss}line{font-family:\0000369}}
+body a {
+  color: #3d56b9;
+  text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  -mox-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_variables\.scss}line{font-family:\0000375}}
+body a:hover {
+  color: #b13131;
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000329}}
+html, button, input, select, textarea {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000332}}
+h1, h2, h3, h4, h5 {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+  font-weight: 400;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000336}}
+#page {
+  min-width: 300px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000339}}
+#navigation {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000342}}
+#content {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000346}}
+#navigation ul.menu {
+  margin-top: 10px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000350}}
+#navigation ul.menu li {
+  text-transform: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_variables\.scss}line{font-family:\0000337}}
+#navigation ul.menu li div, #navigation ul.menu li h1, #navigation ul.menu li h2, #navigation ul.menu li h3, #navigation ul.menu li h4, #navigation ul.menu li h5 {
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_variables\.scss}line{font-family:\0000369}}
+#navigation ul.menu li a {
+  color: #3d56b9;
+  text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  -mox-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_variables\.scss}line{font-family:\0000375}}
+#navigation ul.menu li a:hover {
+  color: #b13131;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000354}}
+#navigation ul.menu li a {
+  padding: 7px 15px 6px 15px;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000357}}
+#navigation ul.menu li a.active, #navigation ul.menu li a:visited {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000362}}
+#navigation ul.menu ul {
+  z-index: 100;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000364}}
+#navigation ul.menu ul:hover {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000368}}
+#navigation ul.menu ul li a:link, #navigation ul.menu ul li a:visited, #navigation ul.menu ul li a:hover {
+  background: transparent;
+  color: #61aee2;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000377}}
+.form-submit {
+  font-size: 16px;
+  padding: 0.2em 1.1em 0.3em 1.2em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF61AEE2', endColorstr='#FF227DBB');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #61aee2), color-stop(70%, #61aee2));
+  background: -webkit-linear-gradient(#61aee2, #61aee2 70%);
+  background: -moz-linear-gradient(#61aee2, #61aee2 70%);
+  background: -o-linear-gradient(#61aee2, #61aee2 70%);
+  background: linear-gradient(#61aee2, #61aee2 70%);
+  -webkit-box-shadow: #a2cfee 0 1px 0 inset;
+  -moz-box-shadow: #a2cfee 0 1px 0 inset;
+  box-shadow: #a2cfee 0 1px 0 inset;
+  border: 1px solid #4ba3de;
+  text-shadow: #1e6fa5 0 -1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
+.form-submit:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000318}}
+.form-submit:hover {
+  background-color: #4ba3de;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #4ba3de), color-stop(75%, #4ba3de));
+  background: -webkit-linear-gradient(#4ba3de 3%, #4ba3de 75%);
+  background: -moz-linear-gradient(#4ba3de 3%, #4ba3de 75%);
+  background: -o-linear-gradient(#4ba3de 3%, #4ba3de 75%);
+  background: linear-gradient(#4ba3de 3%, #4ba3de 75%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000321}}
+.form-submit:active {
+  -webkit-box-shadow: #3f9cdc 0 1px 2px inset;
+  -moz-box-shadow: #3f9cdc 0 1px 2px inset;
+  box-shadow: #3f9cdc 0 1px 2px inset;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
+.form-submit.disabled, .form-submit[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #61aee2;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000376}}
+.form-submit::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000380}}
+ul.primary {
+  padding: 0;
+  border-bottom: 1px solid #D9DBDB;
+}
+@media (min-width: 250px) and (max-width: 400px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000380}}
+  ul.primary {
+    border-bottom: none;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000386}}
+ul.primary li {
+  border: none;
+  margin: 0 5px 0 0;
+  text-shadow: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000390}}
+ul.primary li a:link, ul.primary li a:visited, ul.primary li a:hover {
+  text-shadow: 0;
+  font-size: 16px;
+  padding: 0.2em 1.1em 0.3em 1.2em;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEFF2F1', endColorstr='#FFB7C4C0');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eff2f1), color-stop(70%, #e6e7e7));
+  background: -webkit-linear-gradient(#eff2f1, #e6e7e7 70%);
+  background: -moz-linear-gradient(#eff2f1, #e6e7e7 70%);
+  background: -o-linear-gradient(#eff2f1, #e6e7e7 70%);
+  background: linear-gradient(#eff2f1, #e6e7e7 70%);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid #d9dbdb;
+  text-shadow: white 0 1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
+ul.primary li a:link:hover, ul.primary li a:visited:hover, ul.primary li a:hover:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000318}}
+ul.primary li a:link:hover, ul.primary li a:visited:hover, ul.primary li a:hover:hover {
+  background-color: #d9dbdb;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(3%, #e1e7e5), color-stop(75%, #d9dbdb));
+  background: -webkit-linear-gradient(#e1e7e5 3%, #d9dbdb 75%);
+  background: -moz-linear-gradient(#e1e7e5 3%, #d9dbdb 75%);
+  background: -o-linear-gradient(#e1e7e5 3%, #d9dbdb 75%);
+  background: linear-gradient(#e1e7e5 3%, #d9dbdb 75%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000321}}
+ul.primary li a:link:active, ul.primary li a:visited:active, ul.primary li a:hover:active {
+  -webkit-box-shadow: #d1d3d3 0 1px 2px inset;
+  -moz-box-shadow: #d1d3d3 0 1px 2px inset;
+  box-shadow: #d1d3d3 0 1px 2px inset;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
+ul.primary li a:link.disabled, ul.primary li a:link[disabled], ul.primary li a:visited.disabled, ul.primary li a:visited[disabled], ul.primary li a:hover.disabled, ul.primary li a:hover[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #e6e7e7;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/Jason\/\.rvm\/gems\/ruby-2\.0\.0-p0\/gems\/sassy-buttons-0\.2\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000376}}
+ul.primary li a:link::-moz-focus-inner, ul.primary li a:visited::-moz-focus-inner, ul.primary li a:hover::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000394}}
+ul.primary li a {
+  color: #333 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\0000395}}
+ul.primary li a.active {
+  color: #61aee2 !important;
+}
+
+@media (min-width: 250px) and (max-width: 400px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003102}}
+  ul.primary li, ul.secondary li {
+    float: none;
+    clear: both;
+    margin: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003106}}
+  ul.primary li a, ul.secondary li a {
+    width: 88%;
+  }
+}
+/***********
+~STRUCTURE
+***********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003116}}
+.wrapper.header {
+  background-color: #b13131;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003119}}
+.wrapper.footer {
+  background-color: #eff2f1;
+}
+
+/***********
+~HEADER
+***********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003130}}
+.wrapper.header #header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/_variables\.scss}line{font-family:\0000337}}
+#header div, #header h1, #header h2, #header h3, #header h4, #header h5 {
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003138}}
+h1#site-name {
+  font-family: 'neoretrofillregular';
+  font-size: 3.5em;
+  line-height: 1em;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003143}}
+h1#site-name a:link, h1#site-name a:visited {
+  color: #ffffff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003146}}
+h1#site-name a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003151}}
+  .wrapper.header #header {
+    text-align: center;
+    padding: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003154}}
+  .wrapper.header #header #logo {
+    float: none;
+    clear: both;
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003159}}
+  .wrapper.header #header #name-and-slogan {
+    float: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003161}}
+  .wrapper.header #header #name-and-slogan h1 {
+    margin: 10px 0;
+  }
+}
+/***********
+~SIDEBARS
+***********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003172}}
+aside.sidebars {
+  margin: 30px 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003174}}
+aside.sidebars .sidebar {
+  padding-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003176}}
+aside.sidebars .sidebar h2 {
+  background: #eff2f1;
+  text-indent: 10px;
+  margin: 0 0 10px 0;
+  font-size: 110%;
+}
+@media (min-width: 1000px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003174}}
+  aside.sidebars .sidebar {
+    padding-left: auto;
+  }
+}
+
+/***********
+~FOOTER
+***********/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003193}}
+.wrapper.footer #footer {
+  margin-left: auto;
+  margin-right: auto;
+  color: #555555;
+  font-size: 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003201}}
+ul.social-footer {
+  padding: 0;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003203}}
+ul.social-footer li {
+  list-style-type: none;
+  float: left;
+  margin: 0 5px 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003207}}
+ul.social-footer li a {
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003211}}
+ul.social-footer li a i {
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  color: #555555;
+  font-size: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003218}}
+ul.social-footer li a i span {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003221}}
+ul.social-footer li a i:hover {
+  color: #61aee2;
+}
+
+@media (max-width: 800px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003229}}
+  #footer {
+    text-align: center;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003232}}
+  ul.social-footer {
+    margin-top: -10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/bear\.scss}line{font-family:\00003234}}
+  ul.social-footer li {
+    display: inline-block;
+    float: none;
+  }
+}

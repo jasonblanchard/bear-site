@@ -1,0 +1,22 @@
+name = Bear Habitat Local
+core = 7.x
+package = Bear
+php = 5.2.4
+project = bear
+dependencies[] = ctools
+dependencies[] = habitat
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[variable][] = cache
+features[variable][] = error_level
+features[variable][] = file_temporary_path
+features[variable][] = preprocess_css
+features[variable][] = preprocess_js
+
+; Information added by drupal.org packaging script on 2013-08-13
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "bear"
+datestamp = "1376354353"
+
