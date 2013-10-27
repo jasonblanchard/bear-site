@@ -7,7 +7,6 @@
 /***********
 ~SLIDESHOW
 ***********/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/slideshow\.scss}line{font-family:\0000312}}
 .flexslider {
   background: none repeat scroll 0 0 #FFFFFF;
   border: 0;
@@ -17,7 +16,6 @@
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jason\/drupalvagrant\/public\/dev-site\.vbox\.local\/www\/bear\/profiles\/bear\/themes\/bear_skin\/sass\/slideshow\.scss}line{font-family:\0000323}}
 .flexslider li p {
   text-align: center;
   font-size: 110%;
