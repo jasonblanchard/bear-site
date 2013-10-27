@@ -6,3 +6,4 @@ sites/*/files
 sites/*/private
 *.swp
 .DS_Store
+profiles/bear/themes/bear_skin/.sass-cache/*
